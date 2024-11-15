@@ -17,7 +17,7 @@ A plugin for PowerToys Run that enables quick access to Microsoft Teams function
 
 2. Clone the repository:
    ```
-   git clone https://github.com/yourusername/PowerToys-Run-Teams-Plugin.git
+   git clone https://github.com/MALathon/TeamsPlugin.git
    ```
 
 3. Open the solution in Visual Studio
