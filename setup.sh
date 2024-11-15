@@ -1,23 +1,57 @@
 #!/bin/bash
 
-# Create the PowerToys plugin directory structure
-mkdir -p src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/{Images,Properties}
+# Create necessary directories
+mkdir -p src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Images
 mkdir -p src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams.UnitTests
-
-# Create GitHub Actions directory
 mkdir -p .github/workflows
+mkdir -p nuget-local-feed
 
-# Create initial files
-touch .gitignore
-touch README.md
-touch src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/DynamicPlugin.props
-touch src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/plugin.json
-touch src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Main.cs
-touch src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Properties/AssemblyInfo.cs
+# Copy PowerToys DLLs if needed
+if [ ! -f "nuget-local-feed/Wox.Plugin.dll" ]; then
+    echo "Copying PowerToys DLLs..."
+    cp "$LOCALAPPDATA/Microsoft/PowerToys/Wox.Plugin.dll" nuget-local-feed/
+fi
 
-# Initialize git repository
-git init
+# Create .gitignore if it doesn't exist
+if [ ! -f ".gitignore" ]; then
+    echo "Creating .gitignore..."
+    cat > .gitignore << 'EOL'
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.lock.json
+.vs/
 
-# Download Teams icons (you'll need to replace these URLs with actual icon URLs)
-curl -k -o src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Images/teams.dark.png "https://raw.githubusercontent.com/microsoft/PowerToys/main/src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Images/teams.dark.png"
-curl -k -o src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Images/teams.light.png "https://raw.githubusercontent.com/microsoft/PowerToys/main/src/modules/launcher/Plugins/Microsoft.PowerToys.Run.Plugin.Teams/Images/teams.light.png" 
+## Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+## Local NuGet Feed
+nuget-local-feed/
+EOL
+fi
+
+# Build the solution
+echo "Building solution..."
+dotnet restore
+dotnet build
+
+# Run tests
+echo "Running tests..."
+dotnet test
+
+echo "Setup complete!"

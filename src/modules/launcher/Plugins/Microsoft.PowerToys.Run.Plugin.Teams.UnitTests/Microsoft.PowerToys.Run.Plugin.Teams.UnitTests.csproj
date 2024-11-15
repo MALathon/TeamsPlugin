@@ -1,1 +1,28 @@
- 
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ProjectGuid>{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}</ProjectGuid>
+    <RootNamespace>Microsoft.PowerToys.Run.Plugin.Teams.UnitTests</RootNamespace>
+    <AssemblyName>Microsoft.PowerToys.Run.Plugin.Teams.UnitTests</AssemblyName>
+    <Version>1.0.0</Version>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Platforms>x64</Platforms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <IsPackable>false</IsPackable>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.PowerToys.Run.Plugin.Teams\Microsoft.PowerToys.Run.Plugin.Teams.csproj" />
+  </ItemGroup>
+
+</Project> 

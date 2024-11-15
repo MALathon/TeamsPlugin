@@ -1,14 +1,13 @@
 {
     "ID": "6A122269-8B3F-4324-85F5-165A870F5D9C",
-    "ActionKeyword": ":t",
-    "IsGlobal": false,
+    "ActionKeyword": "t",
     "Name": "Teams",
+    "Description": "Quick access to Microsoft Teams functions",
     "Author": "Your Name",
     "Version": "1.0.0",
     "Language": "csharp",
     "Website": "https://github.com/yourusername/PowerToys-Run-Teams-Plugin",
     "ExecuteFileName": "Microsoft.PowerToys.Run.Plugin.Teams.dll",
-    "IcoPathDark": "Images/teams.dark.png",
-    "IcoPathLight": "Images/teams.light.png",
-    "DynamicLoading": true
+    "IcoPathDark": "Images\\teams.dark.png",
+    "IcoPathLight": "Images\\teams.light.png"
 }

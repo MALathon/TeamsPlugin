@@ -1,0 +1,39 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9B9B0ECD-4AD9-4509-B023-5E4F65A13B8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{8E6E2DF3-D3AA-4E3C-A27B-D8B1F6123E4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "launcher", "launcher", "{7DFA54B0-4D49-41F2-8C88-9C8D64B68C76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{8C0C92C3-8E4A-4A7B-8E27-6E8B51F2E335}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.PowerToys.Run.Plugin.Teams", "src\modules\launcher\Plugins\Microsoft.PowerToys.Run.Plugin.Teams\Microsoft.PowerToys.Run.Plugin.Teams.csproj", "{6A122269-8B3F-4324-85F5-165A870F5D9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.PowerToys.Run.Plugin.Teams.UnitTests", "src\modules\launcher\Plugins\Microsoft.PowerToys.Run.Plugin.Teams.UnitTests\Microsoft.PowerToys.Run.Plugin.Teams.UnitTests.csproj", "{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A122269-8B3F-4324-85F5-165A870F5D9C}.Debug|x64.ActiveCfg = Debug|x64
+		{6A122269-8B3F-4324-85F5-165A870F5D9C}.Debug|x64.Build.0 = Debug|x64
+		{6A122269-8B3F-4324-85F5-165A870F5D9C}.Release|x64.ActiveCfg = Release|x64
+		{6A122269-8B3F-4324-85F5-165A870F5D9C}.Release|x64.Build.0 = Release|x64
+		{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}.Debug|x64.ActiveCfg = Debug|x64
+		{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}.Debug|x64.Build.0 = Debug|x64
+		{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}.Release|x64.ActiveCfg = Release|x64
+		{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E6E2DF3-D3AA-4E3C-A27B-D8B1F6123E4F} = {9B9B0ECD-4AD9-4509-B023-5E4F65A13B8A}
+		{7DFA54B0-4D49-41F2-8C88-9C8D64B68C76} = {8E6E2DF3-D3AA-4E3C-A27B-D8B1F6123E4F}
+		{8C0C92C3-8E4A-4A7B-8E27-6E8B51F2E335} = {7DFA54B0-4D49-41F2-8C88-9C8D64B68C76}
+		{6A122269-8B3F-4324-85F5-165A870F5D9C} = {8C0C92C3-8E4A-4A7B-8E27-6E8B51F2E335}
+		{F0F6E180-37B3-4A21-A7B3-8E3F3A9F6AF5} = {8C0C92C3-8E4A-4A7B-8E27-6E8B51F2E335}
+	EndGlobalSection
+EndGlobal
